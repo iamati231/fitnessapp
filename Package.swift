@@ -8,7 +8,7 @@ let package = Package(
         .executableTarget(
             name: "FitnessApp2",
             path: "Sources/FitnessApp2",
-            resources: [.process("Resources")]
+            infoPlist: .init(stringLiteral: "Sources/FitnessApp2/Info.plist")
         )
     ]
 )
