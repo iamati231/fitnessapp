@@ -1,178 +1,117 @@
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
-	classes = {
-	};
+	classes = {};
 	objectVersion = 56;
 	objects = {
 
-/* PBXBuildFile */
-		8F7C1625AD444F5783E8BC5E /* ContentView.swift */ = {isa = PBXBuildFile; fileRef = 69A38ED42DD8488C8A685DAD /* ContentView.swift */; };
-		CAFDAE0AE95B472C9C339429 /* FitnessApp2App.swift */ = {isa = PBXBuildFile; fileRef = 4DEB89DF13AB42C5A7D98DE9 /* FitnessApp2App.swift */; };
-		C2EFBB5145CD43F29526F36F /* TrainingModels.swift */ = {isa = PBXBuildFile; fileRef = E6A88B202D1E46969F649621 /* TrainingModels.swift */; };
-		3FFE08A8B73C4E0C96CCBD97 /* SeedData.swift */ = {isa = PBXBuildFile; fileRef = CDDBBBE578514467BE9A2A80 /* SeedData.swift */; };
-		EC97A68CCD8B476486BAA6D7 /* DayDetailView.swift */ = {isa = PBXBuildFile; fileRef = 4C5EF1DFA1B347E09CC9D55D /* DayDetailView.swift */; };
-		1FC6F30F6C6F4AA18254F468 /* LogExerciseView.swift */ = {isa = PBXBuildFile; fileRef = E87E0821F48C487B90F32633 /* LogExerciseView.swift */; };
-		F0942E1C208C42E089E79B2C /* PlateCalculatorView.swift */ = {isa = PBXBuildFile; fileRef = 663EC99396204FA99936607B /* PlateCalculatorView.swift */; };
-		572FA64026B94B5D8BA2708B /* RestTimerView.swift */ = {isa = PBXBuildFile; fileRef = 599C95A81DA44886B86C3306 /* RestTimerView.swift */; };
-		E965E5BB04CB46A7BC91DA5B /* WeekView.swift */ = {isa = PBXBuildFile; fileRef = EE68CBB01A5840DFAAB9CC14 /* WeekView.swift */; };
+		5674D71965E747E78DA6659D = {isa = PBXBuildFile; fileRef = 24DED798F1E2498B986352B5; };
+		0EAFB1C392D846F6BCD29496 = {isa = PBXBuildFile; fileRef = 5BADC4B09F284785AF02DF47; };
+		5387CCE392714096BDBD2C01 = {isa = PBXBuildFile; fileRef = E28966D391CC403C9D3031CE; };
+		1F304F50039E4AD0A8EE37EA = {isa = PBXBuildFile; fileRef = 1F6897E5BC4446029B4812A5; };
+		8E15E76BE06F4A35BA7C2478 = {isa = PBXBuildFile; fileRef = 354B5B2CC9384975A7731C8D; };
+		56155DF5C27D4900821BCBCD = {isa = PBXBuildFile; fileRef = 66C5DFE63C6F4370803AD2D7; };
+		42D5A1BBD66D4EA49935FCC6 = {isa = PBXBuildFile; fileRef = AE9D417B4EEE4A5187EE727D; };
+		E21D70AB22A949218CC71166 = {isa = PBXBuildFile; fileRef = 5203CE7CE342426FAA41D8A8; };
+		32295CF34B9F43E599E1E55B = {isa = PBXBuildFile; fileRef = CDA894C043EA48B7A1FD946D; };
 
-/* PBXFileReference */
-		69A38ED42DD8488C8A685DAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
-		4DEB89DF13AB42C5A7D98DE9 /* FitnessApp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApp2App.swift"; sourceTree = "<group>"; };
-		E6A88B202D1E46969F649621 /* TrainingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainingModels.swift"; sourceTree = "<group>"; };
-		CDDBBBE578514467BE9A2A80 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeedData.swift"; sourceTree = "<group>"; };
-		4C5EF1DFA1B347E09CC9D55D /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayDetailView.swift"; sourceTree = "<group>"; };
-		E87E0821F48C487B90F32633 /* LogExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogExerciseView.swift"; sourceTree = "<group>"; };
-		663EC99396204FA99936607B /* PlateCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlateCalculatorView.swift"; sourceTree = "<group>"; };
-		599C95A81DA44886B86C3306 /* RestTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestTimerView.swift"; sourceTree = "<group>"; };
-		EE68CBB01A5840DFAAB9CC14 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekView.swift"; sourceTree = "<group>"; };
+		24DED798F1E2498B986352B5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FitnessApp2App.swift"; path = "Sources/FitnessApp2/FitnessApp2App.swift"; sourceTree = SOURCE_ROOT; };
+		5BADC4B09F284785AF02DF47 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ContentView.swift"; path = "Sources/FitnessApp2/ContentView.swift"; sourceTree = SOURCE_ROOT; };
+		E28966D391CC403C9D3031CE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SeedData.swift"; path = "Sources/FitnessApp2/Services/SeedData.swift"; sourceTree = SOURCE_ROOT; };
+		1F6897E5BC4446029B4812A5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TrainingModels.swift"; path = "Sources/FitnessApp2/Models/TrainingModels.swift"; sourceTree = SOURCE_ROOT; };
+		354B5B2CC9384975A7731C8D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeekView.swift"; path = "Sources/FitnessApp2/Views/WeekView.swift"; sourceTree = SOURCE_ROOT; };
+		66C5DFE63C6F4370803AD2D7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LogExerciseView.swift"; path = "Sources/FitnessApp2/Views/LogExerciseView.swift"; sourceTree = SOURCE_ROOT; };
+		AE9D417B4EEE4A5187EE727D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlateCalculatorView.swift"; path = "Sources/FitnessApp2/Views/PlateCalculatorView.swift"; sourceTree = SOURCE_ROOT; };
+		5203CE7CE342426FAA41D8A8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DayDetailView.swift"; path = "Sources/FitnessApp2/Views/DayDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		CDA894C043EA48B7A1FD946D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RestTimerView.swift"; path = "Sources/FitnessApp2/Views/RestTimerView.swift"; sourceTree = SOURCE_ROOT; };
 
-		0E1EE941F19246F1BED0CC77PROD /* FitnessApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		825FC9B82AEF407CA2959612 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 
-/* PBXFrameworksBuildPhase */
-		1602C668A37B4B949061254A = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+		C915809402FC4CB38830A981 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 
-/* PBXGroup */
-		2EAADA4109FA46E4A4522BE3 = {
+		F39CDDBE69CD461B8B25A91B = {
 			isa = PBXGroup;
 			children = (
-				0E1EE941F19246F1BED0CC77PROD /* FitnessApp2.app */,
+				24DED798F1E2498B986352B5,
+				5BADC4B09F284785AF02DF47,
+				E28966D391CC403C9D3031CE,
+				1F6897E5BC4446029B4812A5,
+				354B5B2CC9384975A7731C8D,
+				66C5DFE63C6F4370803AD2D7,
+				AE9D417B4EEE4A5187EE727D,
+				5203CE7CE342426FAA41D8A8,
+				CDA894C043EA48B7A1FD946D,
+				825FC9B82AEF407CA2959612,
 			);
 			sourceTree = "<group>";
 		};
 
-/* PBXNativeTarget */
-		0E1EE941F19246F1BED0CC77 = {
+		4250B4CDA4204EEF98762068 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11427F8E92C1402A8C7E1800;
-			buildPhases = (
-				D5EAFB735EAF4E2F8282A9BE /* Sources */,
-				1602C668A37B4B949061254A /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
+			buildConfigurationList = 4784FB82F8F14ECD9E665694;
+			buildPhases = (2AF90FFF04024971A3060A55, C915809402FC4CB38830A981);
+			buildRules = ();
+			dependencies = ();
 			name = FitnessApp2;
 			productName = FitnessApp2;
-			productReference = 0E1EE941F19246F1BED0CC77PROD /* FitnessApp2.app */;
+			productReference = 825FC9B82AEF407CA2959612;
 			productType = "com.apple.product-type.application";
 		};
 
-/* PBXProject */
-		43C872BE9B2F4ACC84F37C02 = {
+		B5E5A8ACC94D4F39BE6D449B = {
 			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
-			};
-			buildConfigurationList = C26ADF8450874791BF55A186;
+			attributes = {LastUpgradeCheck = 1600;};
+			buildConfigurationList = 50B95D7C865F40989C781B33;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (en, Base);
-			mainGroup = 2EAADA4109FA46E4A4522BE3;
+			mainGroup = F39CDDBE69CD461B8B25A91B;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = (
-				0E1EE941F19246F1BED0CC77 /* FitnessApp2 */,
-			);
+			targets = (4250B4CDA4204EEF98762068);
 		};
 
-/* PBXSourcesBuildPhase */
-		D5EAFB735EAF4E2F8282A9BE = {
+		2AF90FFF04024971A3060A55 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7C1625AD444F5783E8BC5E /* ContentView.swift */,
-				CAFDAE0AE95B472C9C339429 /* FitnessApp2App.swift */,
-				C2EFBB5145CD43F29526F36F /* TrainingModels.swift */,
-				3FFE08A8B73C4E0C96CCBD97 /* SeedData.swift */,
-				EC97A68CCD8B476486BAA6D7 /* DayDetailView.swift */,
-				1FC6F30F6C6F4AA18254F468 /* LogExerciseView.swift */,
-				F0942E1C208C42E089E79B2C /* PlateCalculatorView.swift */,
-				572FA64026B94B5D8BA2708B /* RestTimerView.swift */,
-				E965E5BB04CB46A7BC91DA5B /* WeekView.swift */,
+				5674D71965E747E78DA6659D,
+				0EAFB1C392D846F6BCD29496,
+				5387CCE392714096BDBD2C01,
+				1F304F50039E4AD0A8EE37EA,
+				8E15E76BE06F4A35BA7C2478,
+				56155DF5C27D4900821BCBCD,
+				42D5A1BBD66D4EA49935FCC6,
+				E21D70AB22A949218CC71166,
+				32295CF34B9F43E599E1E55B,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 
-/* XCBuildConfiguration */
-		A17BEDC231534B2AA573CB39 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		8481E5D344F24DC6994E4B0B = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		574AE48FC06B43A4B4C5D6A5 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Sources/FitnessApp2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
-				PRODUCT_NAME = FitnessApp2;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		7165AA123F3D4ED9BC5051F2 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Sources/FitnessApp2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
-				PRODUCT_NAME = FitnessApp2;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
+		AD91A6CC8F4A4E009E74A6F4 = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0;}; name = Debug; };
+		219477F0AC3944B7B2F3660E = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0;}; name = Release; };
+		2722B259ADFC425A9D786E27 = {isa = XCBuildConfiguration; buildSettings = {
+			BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			INFOPLIST_FILE = "Sources/FitnessApp2/Info.plist";
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			PRODUCT_NAME = FitnessApp2;
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = 1;
+		}; name = Debug; };
+		40F897C77E374044A5516579 = {isa = XCBuildConfiguration; buildSettings = {
+			BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			INFOPLIST_FILE = "Sources/FitnessApp2/Info.plist";
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			PRODUCT_NAME = FitnessApp2;
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = 1;
+		}; name = Release; };
 
-/* XCConfigurationList */
-		C26ADF8450874791BF55A186 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A17BEDC231534B2AA573CB39 /* Debug */,
-				8481E5D344F24DC6994E4B0B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11427F8E92C1402A8C7E1800 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				574AE48FC06B43A4B4C5D6A5 /* Debug */,
-				7165AA123F3D4ED9BC5051F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+		50B95D7C865F40989C781B33 = {isa = XCConfigurationList; buildConfigurations = (AD91A6CC8F4A4E009E74A6F4, 219477F0AC3944B7B2F3660E); defaultConfigurationName = Release; };
+		4784FB82F8F14ECD9E665694 = {isa = XCConfigurationList; buildConfigurations = (2722B259ADFC425A9D786E27, 40F897C77E374044A5516579); defaultConfigurationName = Release; };
 	};
-	rootObject = 43C872BE9B2F4ACC84F37C02;
+	rootObject = B5E5A8ACC94D4F39BE6D449B;
 }
