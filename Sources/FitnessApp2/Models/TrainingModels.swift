@@ -61,7 +61,7 @@ class TrainingDay {
     var name: String
     var weekday: Int          // 1=Montag … 7=Sonntag
     var type: DayType
-    var nextIntensity: DayIntensity = .normal
+    var nextIntensity: DayIntensity = DayIntensity.normal
     @Relationship(deleteRule: .cascade) var exercises: [Exercise] = []
 
     init(name: String, weekday: Int, type: DayType) {
