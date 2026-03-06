@@ -8,9 +8,9 @@ workflows:
       - name: Build iOS app
         script: |
           set -e
-          
-          # Archive erstellen
+
           xcodebuild \
+            -project FitnessApp2.xcodeproj \
             -scheme FitnessApp2 \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
@@ -20,11 +20,10 @@ workflows:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             archive
-          
-          # IPA direkt aus Archive extrahieren (ohne exportArchive)
+
           APP_PATH=$(find /tmp/FitnessApp2.xcarchive -name "*.app" | head -1)
           echo "APP_PATH: $APP_PATH"
-          
+
           mkdir -p /tmp/Payload
           cp -r "$APP_PATH" /tmp/Payload/
           cd /tmp
