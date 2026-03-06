@@ -9,6 +9,7 @@ workflows:
         script: |
           set -e
           
+          # Archive erstellen
           xcodebuild \
             -scheme FitnessApp2 \
             -sdk iphoneos \
@@ -20,25 +21,14 @@ workflows:
             CODE_SIGNING_ALLOWED=NO \
             archive
           
-          # IPA aus Archive erstellen
-          xcodebuild \
-            -exportArchive \
-            -archivePath /tmp/FitnessApp2.xcarchive \
-            -exportPath /tmp/FitnessApp2_export \
-            -exportOptionsPlist /dev/stdin << 'PLIST'
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-            <key>method</key>
-            <string>development</string>
-            <key>signingStyle</key>
-            <string>manual</string>
-          </dict>
-          </plist>
-          PLIST
+          # IPA direkt aus Archive extrahieren (ohne exportArchive)
+          APP_PATH=$(find /tmp/FitnessApp2.xcarchive -name "*.app" | head -1)
+          echo "APP_PATH: $APP_PATH"
           
-          cp /tmp/FitnessApp2_export/*.ipa $CM_BUILD_DIR/FitnessApp2.ipa
+          mkdir -p /tmp/Payload
+          cp -r "$APP_PATH" /tmp/Payload/
+          cd /tmp
+          zip -r $CM_BUILD_DIR/FitnessApp2.ipa Payload/
           ls -lh $CM_BUILD_DIR/FitnessApp2.ipa
     artifacts:
       - $CM_BUILD_DIR/FitnessApp2.ipa
