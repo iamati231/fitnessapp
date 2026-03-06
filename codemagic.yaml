@@ -1,0 +1,19 @@
+workflows:
+  ios-development:
+    name: iOS Development Build
+    max_build_duration: 60
+    environment:
+      xcode: "16.0"
+      cocoapods: default
+    scripts:
+      - name: Build iOS app
+        script: |
+          xcodebuild \
+            -scheme FitnessApp2 \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            build
+    artifacts:
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
