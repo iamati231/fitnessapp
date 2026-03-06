@@ -12,6 +12,7 @@ workflows:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' \
             -configuration Debug \
+            SWIFT_VERSION=5 \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             build

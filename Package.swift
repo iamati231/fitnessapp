@@ -1,24 +1,19 @@
-// swift-tools-version: 6.0
-
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "FitnessApp2",
-    platforms: [
-        .iOS(.v17),
-        .macOS(.v14),
-    ],
+    platforms: [.iOS(.v17)],
     products: [
-        // An xtool project should contain exactly one library product,
-        // representing the main app.
-        .library(
-            name: "FitnessApp2",
-            targets: ["FitnessApp2"]
-        ),
+        .library(name: "FitnessApp2", targets: ["FitnessApp2"])
     ],
     targets: [
         .target(
-            name: "FitnessApp2"
-        ),
+            name: "FitnessApp2",
+            path: "Sources/FitnessApp2",
+            swiftSettings: [
+                .unsafeFlags(["-swift-version", "5"])
+            ]
+        )
     ]
 )
