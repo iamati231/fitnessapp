@@ -9,12 +9,22 @@ workflows:
         script: |
           xcodebuild \
             -scheme FitnessApp2 \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
             -configuration Debug \
-            SWIFT_VERSION=5 \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            ONLY_ACTIVE_ARCH=NO \
             build
+          
+          # .app zu .ipa packen
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "FitnessApp2.app" -path "*/iphoneos/*" 2>/dev/null | head -1)
+          mkdir -p /tmp/Payload
+          cp -r "$APP_PATH" /tmp/Payload/
+          cd /tmp
+          zip -r ~/FitnessApp2.ipa Payload/
+          echo "IPA erstellt: ~/FitnessApp2.ipa"
     artifacts:
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/FitnessApp2.ipa
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.ipa
