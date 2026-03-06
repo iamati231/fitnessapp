@@ -7,6 +7,8 @@ workflows:
     scripts:
       - name: Build iOS app
         script: |
+          set -e
+          
           xcodebuild \
             -scheme FitnessApp2 \
             -sdk iphoneos \
@@ -18,13 +20,15 @@ workflows:
             ONLY_ACTIVE_ARCH=NO \
             build
           
-          # .app zu .ipa packen
-          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "FitnessApp2.app" -path "*/iphoneos/*" 2>/dev/null | head -1)
+          # IPA korrekt erstellen
+          APP_PATH=$(find $HOME/Library/Developer/Xcode/DerivedData -name "FitnessApp2.app" -path "*/iphoneos/*" | head -1)
+          echo "APP_PATH: $APP_PATH"
+          
           mkdir -p /tmp/Payload
           cp -r "$APP_PATH" /tmp/Payload/
           cd /tmp
-          zip -r ~/FitnessApp2.ipa Payload/
-          echo "IPA erstellt: ~/FitnessApp2.ipa"
+          zip -r $CM_BUILD_DIR/FitnessApp2.ipa Payload/
+          echo "IPA Größe:"
+          ls -lh $CM_BUILD_DIR/FitnessApp2.ipa
     artifacts:
-      - $HOME/FitnessApp2.ipa
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.ipa
+      - $CM_BUILD_DIR/FitnessApp2.ipa
