@@ -5,7 +5,7 @@ workflows:
     environment:
       xcode: "16.2"
     scripts:
-      - name: Build & archive (ad-hoc signed)
+      - name: Build & archive (unsigned)
         script: |
           set -e
           xcodebuild \
@@ -15,9 +15,9 @@ workflows:
             -destination 'generic/platform=iOS' \
             -configuration Release \
             -archivePath /tmp/FitnessApp2.xcarchive \
-            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGNING_ALLOWED=NO \
             PROVISIONING_PROFILE_SPECIFIER="" \
             archive
 
