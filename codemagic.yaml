@@ -1,14 +1,20 @@
 workflows:
   ios-development:
-    name: iOS Development Build
+    name: iOS Development Build (Signed)
     max_build_duration: 60
     environment:
-      xcode: "16.0"
+      xcode: "16.2"
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: com.atakan.FitnessApp2
     scripts:
-      - name: Build iOS app
+      - name: Set build number
+        script: |
+          agvtool new-version -all $(($(date +%s)))
+
+      - name: Build & archive
         script: |
           set -e
-
           xcodebuild \
             -project FitnessApp2.xcodeproj \
             -scheme FitnessApp2 \
@@ -16,18 +22,34 @@ workflows:
             -destination 'generic/platform=iOS' \
             -configuration Debug \
             -archivePath /tmp/FitnessApp2.xcarchive \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
             archive
 
-          APP_PATH=$(find /tmp/FitnessApp2.xcarchive -name "*.app" | head -1)
-          echo "APP_PATH: $APP_PATH"
+      - name: Export IPA
+        script: |
+          set -e
+          cat > /tmp/ExportOptions.plist << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>development</string>
+              <key>teamID</key>
+              <string>$APPLE_TEAM_ID</string>
+              <key>compileBitcode</key>
+              <false/>
+          </dict>
+          </plist>
+          EOF
 
-          mkdir -p /tmp/Payload
-          cp -r "$APP_PATH" /tmp/Payload/
-          cd /tmp
-          zip -r $CM_BUILD_DIR/FitnessApp2.ipa Payload/
-          ls -lh $CM_BUILD_DIR/FitnessApp2.ipa
+          xcodebuild -exportArchive \
+            -archivePath /tmp/FitnessApp2.xcarchive \
+            -exportPath $CM_BUILD_DIR \
+            -exportOptionsPlist /tmp/ExportOptions.plist
+
+          ls -lh $CM_BUILD_DIR/*.ipa
+
     artifacts:
-      - $CM_BUILD_DIR/FitnessApp2.ipa
+      - $CM_BUILD_DIR/*.ipa
+      - /tmp/FitnessApp2.xcarchive/Products/Applications/*.app
