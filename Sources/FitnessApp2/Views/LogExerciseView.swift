@@ -151,7 +151,7 @@ struct LogExerciseView: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.teal)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 }
             }
@@ -191,9 +191,12 @@ struct LogExerciseView: View {
         exercise.logs.append(log)
         exercise.updateSuggestedWeight()
         UINotificationFeedbackGenerator().notificationOccurred(.success)
+        comment = ""
         if setIndex < exercise.sets {
             setIndex += 1
             showTimer = true
+        } else {
+            dismiss()
         }
     }
 }

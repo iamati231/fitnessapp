@@ -8,6 +8,6 @@ struct ContentView: View {
             PlateCalculatorView()
                 .tabItem { Label("Plates", systemImage: "scalemass") }
         }
-        .accentColor(.teal)
+        .tint(.teal)
     }
 }

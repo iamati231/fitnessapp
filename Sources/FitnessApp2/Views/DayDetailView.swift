@@ -53,7 +53,7 @@ struct DayDetailView: View {
                             RoundedRectangle(cornerRadius: 16, style: .continuous)
                                 .fill(Color.teal)
                         )
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                 }
                 .padding(.horizontal)
                 .padding(.top, 8)

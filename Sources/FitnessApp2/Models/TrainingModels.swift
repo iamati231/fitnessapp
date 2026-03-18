@@ -108,9 +108,12 @@ class Exercise {
 
     /// RIR-basierte Autoregulation: neues Vorschlagsgewicht berechnen.
     func updateSuggestedWeight() {
-        guard let lastTopSet = logs
-            .sorted(by: { $0.date > $1.date })
-            .max(by: { $0.setIndex < $1.setIndex }) else { return }
+        guard !logs.isEmpty else { return }
+        // Neueste Session ermitteln (gleicher Kalendertag)
+        let calendar = Calendar.current
+        guard let latestDate = logs.map({ $0.date }).max() else { return }
+        let recentLogs = logs.filter { calendar.isDate($0.date, inSameDayAs: latestDate) }
+        guard let lastTopSet = recentLogs.max(by: { $0.setIndex < $1.setIndex }) else { return }
 
         let multiplier: Double
         switch lastTopSet.rir {

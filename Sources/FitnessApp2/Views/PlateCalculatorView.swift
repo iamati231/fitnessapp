@@ -33,50 +33,48 @@ struct PlateCalculatorView: View {
     let availablePlates: [Double] = [25, 20, 15, 10, 5, 2.5, 1.25]
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                Form {
-                    Section("Zielgewicht") {
-                        HStack {
-                            Text("Gesamt (kg)")
-                            Spacer()
-                            TextField("100", value: $targetWeight, format: .number)
-                                .keyboardType(.decimalPad)
-                                .multilineTextAlignment(.trailing)
-                        }
-                        HStack {
-                            Text("Stange (kg)")
-                            Spacer()
-                            TextField("20", value: $barWeight, format: .number)
-                                .keyboardType(.decimalPad)
-                                .multilineTextAlignment(.trailing)
-                        }
+        NavigationStack {
+            Form {
+                Section("Zielgewicht") {
+                    HStack {
+                        Text("Gesamt (kg)")
+                        Spacer()
+                        TextField("100", value: $targetWeight, format: .number)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
                     }
-
-                    Section {
-                        Button("Berechnen") {
-                            plates = PlateCalculator.calculate(
-                                target: targetWeight,
-                                bar: barWeight,
-                                available: availablePlates
-                            )
-                        }
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                    HStack {
+                        Text("Stange (kg)")
+                        Spacer()
+                        TextField("20", value: $barWeight, format: .number)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
                     }
+                }
 
-                    if !plates.isEmpty {
-                        Section("Scheiben pro Seite") {
-                            ForEach(plates) { plate in
-                                HStack {
-                                    Text("\(plate.plateWeight, specifier: "%.2f") kg")
-                                    Spacer()
-                                    Text("× \(plate.countPerSide)")
-                                        .bold()
-                                }
+                Section {
+                    Button("Berechnen") {
+                        plates = PlateCalculator.calculate(
+                            target: targetWeight,
+                            bar: barWeight,
+                            available: availablePlates
+                        )
+                    }
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(Color.teal)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+
+                if !plates.isEmpty {
+                    Section("Scheiben pro Seite") {
+                        ForEach(plates) { plate in
+                            HStack {
+                                Text("\(plate.plateWeight, specifier: "%.2f") kg")
+                                Spacer()
+                                Text("× \(plate.countPerSide)")
+                                    .bold()
                             }
                         }
                     }

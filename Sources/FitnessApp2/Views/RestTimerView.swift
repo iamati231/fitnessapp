@@ -97,13 +97,15 @@ struct RestTimerView: View {
 
     private func startCounting() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+        let t = Timer(timeInterval: 0.1, repeats: true) { _ in
             guard !state.isPaused, state.timeRemaining > 0.05 else {
                 if state.timeRemaining <= 0.05 { finishTimer() }
                 return
             }
             state.timeRemaining -= 0.1
         }
+        RunLoop.main.add(t, forMode: .common)
+        timer = t
     }
 
     private func finishTimer() {
