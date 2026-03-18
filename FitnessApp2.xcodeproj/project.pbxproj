@@ -83,24 +83,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C70FEE92D42B40D99A72DBAB = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0;}; name = Debug; };
-		02BE012C15AB45858BBABEBE = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0;}; name = Release; };
+		C70FEE92D42B40D99A72DBAB = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.9;}; name = Debug; };
+		02BE012C15AB45858BBABEBE = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.9;}; name = Release; };
 		1565C1B86C12449DAD510D64 = {isa = XCBuildConfiguration; buildSettings = {
 			BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			CURRENT_PROJECT_VERSION = 1;
 			INFOPLIST_FILE = "Sources/FitnessApp2/Info.plist";
 			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			MARKETING_VERSION = 1.0;
 			PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
 			PRODUCT_NAME = FitnessApp2;
-			SWIFT_VERSION = 5.0;
+			SWIFT_VERSION = 5.9;
 			TARGETED_DEVICE_FAMILY = 1;
 		}; name = Debug; };
 		EE770EB40B5D4567B58941FB = {isa = XCBuildConfiguration; buildSettings = {
 			BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
+			CURRENT_PROJECT_VERSION = 1;
 			INFOPLIST_FILE = "Sources/FitnessApp2/Info.plist";
 			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			MARKETING_VERSION = 1.0;
 			PRODUCT_BUNDLE_IDENTIFIER = com.atakan.FitnessApp2;
 			PRODUCT_NAME = FitnessApp2;
-			SWIFT_VERSION = 5.0;
+			SWIFT_VERSION = 5.9;
 			TARGETED_DEVICE_FAMILY = 1;
 		}; name = Release; };
 		3C2F39D227B54E10991EA326 = {isa = XCConfigurationList; buildConfigurations = (C70FEE92D42B40D99A72DBAB, 02BE012C15AB45858BBABEBE); defaultConfigurationName = Release; };
